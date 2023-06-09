@@ -1,0 +1,27 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master # 将 'main' 替换为你项目的默认分支名
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: pnpm install # 或者使用 npm install
+
+      - name: Build
+        run: pnpm docs:build # 或者使用 npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          branch: gh-pages # 将 'gh-pages' 替换为你想要部署到的分支名
+          folder: dist # 如果你的 VitePress 项目的输出目录不是 'dist'，请相应修改为正确的目录名

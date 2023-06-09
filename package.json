@@ -1,0 +1,41 @@
+{
+  "name": "vue-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
+    "@mistjs/eslint-config-vue-jsx": "^0.0.7",
+    "@mistjs/tsconfig": "^1.1.1",
+    "@mistjs/tsconfig-vue": "^1.1.2",
+    "@types/node": "^18.15.11",
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "eslint": "^8.38.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.1",
+    "prettier": "^2.8.7",
+    "typescript": "^5.0.4",
+    "vite": "^4.2.2",
+    "vite-plugin-vitepress-demo": "2.0.0-beta.26",
+    "vitepress": "1.0.0-alpha.72"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,vue}": "eslint --fix"
+  },
+  "dependencies": {
+    "@mdit-vue/shared": "^0.12.0",
+    "sass": "^1.62.1",
+    "vue": "^3.2.47"
+  }
+}
