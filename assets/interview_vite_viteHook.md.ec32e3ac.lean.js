@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,O as l}from"./chunks/framework.5a3b7e7e.js";const A=JSON.parse('{"title":"vite 生命周期","description":"","frontmatter":{},"headers":[],"relativePath":"interview/vite/viteHook.md"}'),p={name:"interview/vite/viteHook.md"},o=l("",33),e=[o];function t(c,r,y,D,F,i){return n(),a("div",null,e)}const u=s(p,[["render",t]]);export{A as __pageData,u as default};
