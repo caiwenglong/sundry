@@ -4,7 +4,7 @@ import { getSidebar } from './config/sidebar'
 
 export default defineConfig({
   title: '个人小站',
-  base: '/wlCai/',
+  base: '/sundry/',
   appearance: 'dark',
   themeConfig: {
     nav: getNav(),
