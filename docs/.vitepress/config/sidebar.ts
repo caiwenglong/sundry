@@ -18,7 +18,7 @@ export const getSidebar = (): DefaultTheme.Sidebar => {
             text: 'call-apply-bind',
             link: '/interview/javascript/callApplyBind.md'
           },
-          { text: 'js时间循环', link: '/interview/javascript/jsEventLoop.md' },
+          { text: 'js事件循环', link: '/interview/javascript/jsEventLoop.md' },
           { text: 'js 内存泄漏', link: '/interview/javascript/jsMemoryLeak.md' }
         ]
       },

@@ -2,10 +2,10 @@ import type { DefaultTheme } from 'vitepress'
 
 export const getNav = (): DefaultTheme.NavItem[] => {
   return [
-    {
-      text: '组件',
-      link: '/components/'
-    },
+    // {
+    //   text: '组件',
+    //   link: '/components/'
+    // },
     {
       text: '导航',
       items: [
@@ -13,7 +13,20 @@ export const getNav = (): DefaultTheme.NavItem[] => {
         { text: '框架', link: '/navigation/framework/index.md' },
         { text: 'AI', link: '/navigation/AI/index.md' },
         { text: '前端其他站点', link: '/navigation/other/index.md' },
+        { text: '他人的导航站', link: '/navigation/navWebsite/index.md' },
         { text: '其他一些工具站', link: '/navigation/recommend/library.md' }
+      ]
+    },
+    {
+      text: 'vue',
+      items: [
+        {
+          text: 'vue2',
+          items: [
+            { text: 'keep-alive', link: '/vue/vue2/keepAlive.md' },
+            { text: '生命周期', link: '/vue/vue2/lifeCycle.md' }
+          ]
+        }
       ]
     },
     {
@@ -29,7 +42,6 @@ export const getNav = (): DefaultTheme.NavItem[] => {
         {
           text: 'javascript',
           items: [
-            { text: 'keep-alive', link: '/interview/javascript/keepAlive.md' },
             {
               text: 'call-apply-bind',
               link: '/interview/javascript/callApplyBind.md'

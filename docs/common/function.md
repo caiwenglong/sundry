@@ -1,139 +1,48 @@
----
-description: 记录开发中的一些常用方法：环境判断、验证url是否有效、提取身份证信息
----
+# 一些面试题
 
-# 常用方法
-
-> 收集开发中的一些常用方法
-
-## 环境判断
+### 并发请求
 
 ```js
-const UA = window.navigator.userAgent.toLowerCase()
+/**
+ *  实现一个并发请求函数concurrencyRequest(urls, maxNum)，要求如下：
+    • 要求最大并发数 maxNum
+    • 每当有一个请求返回，就留下一个空位，可以增加新的请求
+    • 所有请求完成后，结果按照 urls 里面的顺序依次打出（发送请求的函数可以直接使用fetch即可）
+  **/
+ const handleLimitRequire = (urls, maxNum) => {
+  return new Promise((resolve, reject) => {
+      if(urls.length === 0) {
+          resolve ([])
+          return 
+      }
+      const results = []
+      let index = 0;
+      let count = 0;
 
-// Android
-const isAndroid = /android/.test(UA)
-
-// IOS
-const isIOS = /iphone|ipad|ipod|ios/.test(UA)
-
-// 浏览器环境
-const inBrowser = typeof window !== 'undefined'
-
-// IE
-const isIE = /msie|trident/.test(UA)
-
-// Edge
-const isEdge = UA.indexOf('edge/') > 0
-
-// Chrome
-const isChrome = /chrome\/\d+/.test(UA) && !isEdge
-
-// 微信
-const isWeChat = /micromessenger/.test(UA)
-
-// 移动端
-const isMobile = 'ontouchstart' in window
-```
-
-## 微信 `api promise` 化
-
-```js
-function promisify(fn) {
-  return function (options) {
-    return new Promise((resolve, reject) => {
-      fn(
-        Object.assign({}, options, {
-          success: resolve,
-          fail: reject
-        })
-      )
-    })
-  }
-}
-
-// 例 获取系统信息
-promisify(wx.getSystemInfo)
-  .then((res) => {
-    console.log('success', res)
+      async function request() {
+          if(index === urls.length) {
+              return 
+          }
+          const i = index; // 保存序号，使result和urls相对应
+          const url = urls[index];
+          index++;
+          console.log(url)
+          try {
+              results[i] = await fetch(url)
+          } catch(err) {
+              results[i] = err
+          } finally {
+              count ++ 
+              if(count === urls.length) {
+                  resolve(results)
+              }
+              request();
+          }
+      }
+      const times = Math.min(urls.length, maxNum) // 得到次数
+      for(let i = 0; i < times; i++) {
+          request();
+      }
   })
-  .catch((err) => {
-    console.log('fail', err)
-  })
-```
-
-## 验证 `url` 是否有效
-
-```js
-function isUrl(string) {
-  if (typeof string !== 'string') {
-    return false
-  }
-  try {
-    new URL(string)
-    return true
-  } catch (err) {
-    return false
-  }
-}
-
-isUrl('maomao') // false
-
-isUrl('https://github.com/maomao1996') // true
-isUrl('https://a.b.c') // true
-```
-
-::: warning 注意
-该技巧只适用于一些验证不严格的场景，[严格场景下可以使用这个 npm 包 —— is-url](https://github.com/segmentio/is-url)
-:::
-
-## 提取身份证信息
-
-- #### 参数
-
-  - **idCard:** 身份证号码
-  - **separator:** 出生年月日的分割字符，默认为 `/`
-
-- #### 返回值
-
-  - **age:** 年龄（实岁）
-  - **birthday:** 出生年月日
-  - **gender:** 性别（0 女 1 男）
-
-```js
-function getIdCardInfo(idCard, separator = '/') {
-  if (
-    !/^[1-9]\d{5}(?:18|19|20)\d{2}(?:0[1-9]|10|11|12)(?:0[1-9]|[1-2]\d|30|31)\d{3}[\dXx]$/.test(
-      idCard
-    )
-  ) {
-    throw Error(`${idCard}不是一个身份证号码`)
-  }
-  // 提取 idCard 中的字符
-  const idSubstr = (s, e) => idCard.substr(s, e)
-  // 拼接日期
-  const splice = (d) => d.join(separator)
-  // 获取出生年月日 性别（0 女 1 男）
-  let birthday, gender
-  if (idCard.length === 18) {
-    birthday = splice([idSubstr(6, 4), idSubstr(10, 2), idSubstr(12, 2)])
-    gender = idSubstr(-2, 1) & 1
-  } else {
-    birthday = splice(idSubstr(6, 2), idSubstr(8, 2), idSubstr(10, 2))
-    gender = idSubstr(-1, 1) & 1
-  }
-  // 获取年龄（实岁）
-  const birthDate = new Date(birthday)
-  const newDate = new Date()
-  const year = newDate.getFullYear()
-  let age = year - birthDate.getFullYear()
-  if (newDate < new Date(splice([year, birthday.substring(5)]))) {
-    age--
-  }
-  return {
-    age,
-    birthday,
-    gender
-  }
 }
 ```
