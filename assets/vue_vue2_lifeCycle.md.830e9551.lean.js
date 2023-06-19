@@ -1,0 +1,1 @@
+import{_ as e,o,c as t,O as a}from"./chunks/framework.c8e53cde.js";const p=JSON.parse('{"title":"vue2 生命周期以及该阶段的作用","description":"","frontmatter":{},"headers":[],"relativePath":"vue/vue2/lifeCycle.md"}'),r={name:"vue/vue2/lifeCycle.md"},i=a("",13),n=[i];function c(l,d,u,h,s,b){return o(),t("div",null,n)}const v=e(r,[["render",c]]);export{p as __pageData,v as default};

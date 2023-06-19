@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,O as l}from"./chunks/framework.c8e53cde.js";const C=JSON.parse('{"title":"一些面试题","description":"","frontmatter":{},"headers":[],"relativePath":"common/function.md"}'),p={name:"common/function.md"},o=l("",3),e=[o];function c(r,t,y,F,D,i){return n(),a("div",null,e)}const u=s(p,[["render",c]]);export{C as __pageData,u as default};
