@@ -53,6 +53,14 @@ export const getNav = (): DefaultTheme.NavItem[] => {
             {
               text: 'js 内存泄漏',
               link: '/interview/javascript/jsMemoryLeak.md'
+            },
+            {
+              text: '防抖节流',
+              link: '/interview/javascript/throttle.md'
+            },
+            {
+              text: 'promise',
+              link: '/interview/javascript/promise.md'
             }
           ]
         },
@@ -61,6 +69,14 @@ export const getNav = (): DefaultTheme.NavItem[] => {
           items: [
             { text: 'vite 生命周期', link: '/interview/vite/viteHook.md' },
             { text: 'vite 预构建', link: '/interview/vite/vitePreBuild.md' }
+          ]
+        },
+        {
+          text: '算法题',
+          items: [
+            { text: '数组', link: '/leetCode/array.md' },
+            { text: '指针', link: '/leetCode/pointer.md' },
+            { text: '栈', link: '/leetCode/stack.md' }
           ]
         }
       ]
