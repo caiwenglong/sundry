@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,O as l}from"./chunks/framework.c8e53cde.js";const C=JSON.parse('{"title":"栈","description":"","frontmatter":{},"headers":[],"relativePath":"leetCode/stack.md"}'),p={name:"leetCode/stack.md"},o=l("",3),e=[o];function t(c,r,y,F,D,i){return n(),a("div",null,e)}const b=s(p,[["render",t]]);export{C as __pageData,b as default};
