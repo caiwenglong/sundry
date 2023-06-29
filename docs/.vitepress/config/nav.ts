@@ -37,48 +37,43 @@ export const getNav = (): DefaultTheme.NavItem[] => {
       ]
     },
     {
-      text: '火箭',
+      text: 'javascript',
       items: [
         {
-          text: 'javascript',
-          items: [
-            {
-              text: 'call-apply-bind',
-              link: '/interview/javascript/callApplyBind.md'
-            },
-            {
-              text: 'js-event-loop',
-              link: '/interview/javascript/jsEventLoop.md'
-            },
-            {
-              text: 'js 内存泄漏',
-              link: '/interview/javascript/jsMemoryLeak.md'
-            },
-            {
-              text: '防抖节流',
-              link: '/interview/javascript/throttle.md'
-            },
-            {
-              text: 'promise',
-              link: '/interview/javascript/promise.md'
-            }
-          ]
+          text: 'call-apply-bind',
+          link: '/interview/javascript/callApplyBind.md'
         },
         {
-          text: 'vite',
-          items: [
-            { text: 'vite 生命周期', link: '/interview/vite/viteHook.md' },
-            { text: 'vite 预构建', link: '/interview/vite/vitePreBuild.md' }
-          ]
+          text: 'js-event-loop',
+          link: '/interview/javascript/jsEventLoop.md'
         },
         {
-          text: '算法题',
-          items: [
-            { text: '数组', link: '/leetCode/array.md' },
-            { text: '指针', link: '/leetCode/pointer.md' },
-            { text: '栈', link: '/leetCode/stack.md' }
-          ]
+          text: 'js 内存泄漏',
+          link: '/interview/javascript/jsMemoryLeak.md'
+        },
+        {
+          text: '防抖节流',
+          link: '/interview/javascript/throttle.md'
+        },
+        {
+          text: 'promise',
+          link: '/interview/javascript/promise.md'
         }
+      ]
+    },
+    {
+      text: '算法题',
+      items: [
+        { text: '数组', link: '/leetCode/array.md' },
+        { text: '指针', link: '/leetCode/pointer.md' },
+        { text: '栈', link: '/leetCode/stack.md' }
+      ]
+    },
+    {
+      text: 'vite',
+      items: [
+        { text: 'vite 生命周期', link: '/interview/vite/viteHook.md' },
+        { text: 'vite 预构建', link: '/interview/vite/vitePreBuild.md' }
       ]
     },
     {
