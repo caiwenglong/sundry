@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as e,O as l}from"./chunks/framework.c8e53cde.js";const h=JSON.parse('{"title":"遇到的问题","description":"","frontmatter":{},"headers":[],"relativePath":"git/problems.md"}'),n={name:"git/problems.md"},t=l("",11),i=[t];function r(o,p,c,d,m,u){return a(),e("div",null,i)}const _=s(n,[["render",r]]);export{h as __pageData,_ as default};
