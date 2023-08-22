@@ -80,7 +80,8 @@ export const getNav = (): DefaultTheme.NavItem[] => {
       text: 'git',
       items: [
         { text: 'git相关技巧', link: '/git/index.md' },
-        { text: 'git相关命令', link: '/git/command.md' }
+        { text: 'git相关命令', link: '/git/command.md' },
+        { text: 'git遇到的问题', link: '/git/problems.md' }
       ]
     },
     {
