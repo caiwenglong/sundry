@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a,O as r}from"./chunks/framework.c8e53cde.js";const h=JSON.parse('{"title":"一些零碎的东西","description":"","frontmatter":{},"headers":[],"relativePath":"grocery/index.md"}'),o={name:"grocery/index.md"},i=r("",3),n=[i];function c(s,u,d,l,_,b){return t(),a("div",null,n)}const m=e(o,[["render",c]]);export{h as __pageData,m as default};
